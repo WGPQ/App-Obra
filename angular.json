@@ -24,9 +24,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "app-obra"
+    }
+  },
+  "defaultProject": "app-obra",
+  "cli": {
+    "analytics": "26e68045-05b7-4563-b62f-1c0f55e376b0"
+  }
 }

@@ -1,0 +1,202 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg  bg-info navbar-light">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLink="">
+        <img class="profile-user-img img-fluid img-circle"
+            src="https://galileoenrichment.com/wp-content/uploads/2020/03/man.png" alt="User profile picture"
+            style="width:50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a routerLink="/obra" class="text-white nav-link">{{useremail}}
+                    <!--   <i class="fas fa-home"></i>-->
+                </a>
+            </li>
+            <!--<li class="nav-item">
+                <a routerLink="/obra" class="text-white nav-link">Obra
+                   
+                </a>
+            </li>-->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a (click)="cerrarSession()" class="text-white nav-link">Cerrar Sesion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- /.navbar -->
+<div class="container">
+    <button (click)="nuevaObra()" class="btn btn-primary" type="button" data-toggle="collapse"
+        data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Nueva Obra
+    </button>
+    <br>
+    <br>
+    <div class="collapse" id="collapseExample">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card card-default">
+                    <div class="card-header card-header-border-bottom">
+                        <h2>{{action}} Obra</h2>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="obras" (ngSubmit)="guardarObra()">
+                            <div class="form-row">
+
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Nombre</label>
+                                    <input type="text" class="form-control input-lg" formControlName="nombre"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('nombre').hasError('required') && obras.get('nombre').touched">
+                                    El nombre es requerido
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Longitud</label>
+                                    <input type="text" class="form-control input-lg" formControlName="lon"
+                                        aria-describedby="emailHelp" value="{{lonObra}}">
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('lon').hasError('required') && obras.get('lon').touched">
+                                    Longitud es requerido
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Latitud</label>
+                                    <input type="text" class="form-control input-lg" formControlName="lat"
+                                        aria-describedby="emailHelp" value="{{latObra}}">
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('lat').hasError('required') && obras.get('lat').touched">
+                                    Latitud es requerido
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Fecha inicio</label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" formControlName="fecha_ini"
+                                            [(ngModel)]="modelini" ngbDatepicker #d="ngbDatepicker" placement="botoom"
+                                            [positionTarget]="buttonEl">
+                                        <div class="input-group-append">
+                                            <button #buttonEl class="btn btn-outline-secondary calendar"
+                                                (click)="d.toggle()" type="button"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('fecha_ini').hasError('required') && obras.get('fecha_ini').touched">
+                                    La fecha inicial es requerida
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Fecha fin</label>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" formControlName="fecha_fin"
+                                            [(ngModel)]="modelfin" ngbDatepicker #d2="ngbDatepicker" placement="botoom"
+                                            [positionTarget]="buttonEl2">
+                                        <div class="input-group-append">
+                                            <button #buttonEl2 class="btn btn-outline-secondary calendar"
+                                                (click)="d2.toggle()" type="button"></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('fecha_fin').hasError('required') && obras.get('fecha_fin').touched">
+                                    La fecha final es requerida
+                                </span>
+
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="inputState">Marcador</label>
+                                    <select formControlName="marcador" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('marcador').hasError('required') && obras.get('marcador').touched">
+                                    El marcador es requerido
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Descripcion</label>
+                                    <input type="text" class="form-control input-lg" formControlName="descripcion"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <span class="text-danger ml-3"
+                                    *ngIf="obras.get('descripcion').hasError('required') && obras.get('descripcion').touched">
+                                    La descripcion es requerida
+                                </span>
+                                <div class="form-group col-md-12 mb-3">
+                                    <label for="validationServer01">Otros datos</label>
+                                    <input type="text" class="form-control input-lg" formControlName="otroDato"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                            </div>
+                            <button class="btn btn-primary" type="submit">{{submitType}} Obra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="map" id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive" id="formowners" #formowners>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Marcador</th>
+                    <th scope="col">Fecha inicio</th>
+                    <th scope="col">Fecha fin</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Otros Datos</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obra of listObra; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{obra.nombre}}</td>
+                    <td>{{obra.marcador}}</td>
+                    <td>{{obra.fecha_ini}}</td>
+                    <td>{{obra.fecha_fin}}</td>
+                    <td>{{obra.descripcion}}</td>
+                    <td>{{obra.otroDato}}</td>
+                    <td><button type="button" class="btn btn-info " (click)="getOwner(dataowner.idOwner)"> <i
+                                class="mdi mdi-dog mdi-18px"></i>Ver</button></td>
+                    <td><button (click)="deleteObra(obra.id)" class="btn btn-danger">Eliminar</button></td>
+                <td>  <button  (click)="editObra(obra.id)" class="btn btn-success" type="button" data-toggle="collapse"
+                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Editar
+                </button></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

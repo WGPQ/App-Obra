@@ -1,0 +1,45 @@
+<div class="container d-flex flex-column justify-content-between vh-100">
+    <div class="row justify-content-center mt-5">
+        <div class="col-xl-5 col-lg-6 col-md-10">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <div class="app-brand">
+                        <a routerLink="/login">
+                            <span class="text-white brand-name">Mi Obra</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-5">
+                    <h4 class="text-dark mb-5 ">Registrar Usuario</h4>
+
+                    <form [formGroup]="users" (ngSubmit)="registrarUser()">
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-4">
+                                <input type="email" class="form-control input-lg" formControlName="email"
+                                    aria-describedby="emailHelp" placeholder="Correo">
+                            </div>
+                            <span class="text-danger ml-3"
+                                *ngIf="users.get('email').hasError('required') && users.get('email').touched">
+                                The contrasenia is required
+                            </span>
+                            <div class="form-group col-md-12 ">
+                                <input type="password" class="form-control input-lg" formControlName="contrasenia"
+                                    placeholder="Contraseña">
+                            </div>
+                            <span class="text-danger ml-3"
+                                *ngIf="users.get('contrasenia').hasError('required') && users.get('contrasenia').touched">
+                                The contrasenia is required
+                            </span>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-lg btn-info btn-block mb-4">Registrarse</button>
+                                <a class="text-blue" routerLink="/login">Atras</a>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
