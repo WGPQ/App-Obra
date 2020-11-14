@@ -5,13 +5,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { ObraPageComponent } from './components/ObraComponets/obra-page/obra-page.component';
 import { HomeObrePageComponent } from './components/ObraComponets/home-obre-page/home-obre-page.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { EditarAgregarPageComponent } from './components/ObraComponets/editar-agregar-page/editar-agregar-page.component';
 import { MapaPageComponent } from './components/ObraComponets/mapa-page/mapa-page.component';
 import { ViewPageComponent } from './components/ObraComponets/view-page/view-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'registrar', component: RegisterPageComponent },
   {

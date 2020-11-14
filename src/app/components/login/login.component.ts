@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
   loading = false;
 
   ngOnInit(): void {
+    if(localStorage.getItem('usuario_actual')!=null){
+      this.router.navigate(['/home/obra']);
+    }
   }
 
   inicarSession() {

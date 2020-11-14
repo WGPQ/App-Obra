@@ -11,7 +11,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeObrePageComponent } from "./components/ObraComponets/home-obre-page/home-obre-page.component";
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { EditarAgregarPageComponent } from './components/ObraComponets/editar-agregar-page/editar-agregar-page.component';
 import { ViewPageComponent } from './components/ObraComponets/view-page/view-page.component';
 import { ObraPageComponent } from './components/ObraComponets/obra-page/obra-page.component';
@@ -25,7 +24,6 @@ import { Key } from 'protractor';
     LoginComponent,
     ObraPageComponent,
     RegisterPageComponent,
-    HomePageComponent,
     EditarAgregarPageComponent,
     ViewPageComponent,
     HomeObrePageComponent,
