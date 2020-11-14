@@ -10,7 +10,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./view-page.component.css']
 })
 export class ViewPageComponent implements OnInit {
-
   constructor( private toastr: ToastrService,private route: ActivatedRoute, private service: FirebaseService, private router: Router) { }
   obra: Obra = {
     nombre: "",
@@ -35,6 +34,8 @@ export class ViewPageComponent implements OnInit {
         this.idObra = resp['obra'];
         this.service.ObtenerObra(this.idObra).subscribe(data => {
           this.obra = data.payload.data() as Obra;
+          let fecha=this.obra.fecha_ini;
+          console.log(fecha);
           this.loading = false;
           if (this.obra == null)
             this.router.navigate(['/home/obra']);

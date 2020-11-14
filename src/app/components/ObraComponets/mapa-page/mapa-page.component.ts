@@ -47,17 +47,6 @@ export class MapaPageComponent implements OnInit {
           ...o.payload.doc.data() as {}
         } as Obra;
       });
-      /*this.listObra.forEach(mark => {
-        if (mark.marcador == '1') {
-          mark.marcador = '../../assets/markrs/rojo.svg';
-        } else if (mark.marcador == '2') {
-          mark.marcador = '../../assets/markrs/amarilla.svg';
-        } else if (mark.marcador == '3') {
-          mark.marcador = '../../assets/markrs/azul.svg';
-        } else if (mark.marcador == '4') {
-          mark.marcador = '../../assets/markrs/verde.svg';
-        }
-      });*/
     });
   }
 }
