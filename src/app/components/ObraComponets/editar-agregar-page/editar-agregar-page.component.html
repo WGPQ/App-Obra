@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-lg-5">
+        <div class="card card-default">
+            <div class="card-header card-header-border-bottom">
+                <h2>{{action}} Obra</h2>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="obras" (ngSubmit)="guardarObra()">
+                    <div class="form-row">
+
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Nombre</label>
+                            <input type="text" class="form-control input-lg" formControlName="nombre"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('nombre').hasError('required') && obras.get('nombre').touched">
+                            El nombre es requerido
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Longitud</label>
+                            <input type="text" disabled="false" class="form-control input-lg" formControlName="lon"
+                                aria-describedby="emailHelp" value="{{lngObra}}">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('lon').hasError('required') && obras.get('lon').touched">
+                            Longitud es requerido
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Latitud</label>
+                            <input type="text" disabled="false" class="form-control input-lg" formControlName="lat"
+                                aria-describedby="emailHelp" value="{{latObra}}">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('lat').hasError('required') && obras.get('lat').touched">
+                            Latitud es requerido
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Fecha inicio</label>
+                            <input type="date" class="form-control input-lg" formControlName="fecha_ini"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('fecha_ini').hasError('required') && obras.get('fecha_ini').touched">
+                            La fecha inicial es requerida
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Fecha fin</label>
+                            <input type="date" class="form-control input-lg" formControlName="fecha_fin"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('fecha_fin').hasError('required') && obras.get('fecha_fin').touched">
+                            La fecha final es requerida
+                        </span>
+
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="inputState">Marcador</label>
+                            <select formControlName="marcador" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="rojo.svg">rojo</option>
+                                <option value="amarilla.svg">amarillo</option>
+                                <option value="azul.svg">azul</option>
+                                <option value="verde.svg">verde</option>
+                            </select>
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('marcador').hasError('required') && obras.get('marcador').touched">
+                            El marcador es requerido
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Descripcion</label>
+                            <input type="text" class="form-control input-lg" formControlName="descripcion"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                        <span class="text-danger ml-3"
+                            *ngIf="obras.get('descripcion').hasError('required') && obras.get('descripcion').touched">
+                            La descripcion es requerida
+                        </span>
+                        <div class="form-group col-md-12 mb-3">
+                            <label for="validationServer01">Otros datos</label>
+                            <input type="text" class="form-control input-lg" formControlName="otroDato"
+                                aria-describedby="emailHelp">
+                        </div>
+
+                    </div>
+                    <button class="btn btn-primary"  [disabled]="obras.invalid" type="submit">{{submitType}} Obra</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="card card-default">
+            <div class="card-body">
+                <app-mapa-page (dato)="funtionCamb($event)"></app-mapa-page>
+            </div>
+        </div>
+
+    </div>
+</div>

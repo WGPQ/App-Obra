@@ -1,0 +1,36 @@
+<div class="table-responsive" id="formowners" #formowners>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Marcador</th>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha fin</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Otros Datos</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obra of listObra; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{obra.nombre}}</td>
+                <td><img src="../../assets/markrs/{{obra.marcador}} " alt="Cinque Terre" width="25" height="25"></td>
+                <td>{{obra.fecha_ini}}</td>
+                <td>{{obra.fecha_fin}}</td>
+                <td>{{obra.descripcion}}</td>
+                <td>{{obra.otroDato}}</td>
+                <td><button type="button" class="btn btn-info " (click)="VerObra(obra.id)"> <i
+                            class="mdi mdi-dog mdi-18px"></i>Ver</button></td>
+                <td> <button (click)="editObra(obra.id)" class="btn btn-success" type="button" data-toggle="collapse"
+                        aria-expanded="false">
+                        Editar
+                    </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

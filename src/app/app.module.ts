@@ -6,18 +6,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FirebaseService } from './services/firebase.service';
-import { ObraPageComponent } from './components/obra-page/obra-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeObrePageComponent } from "./components/ObraComponets/home-obre-page/home-obre-page.component";
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { EditarAgregarPageComponent } from './components/ObraComponets/editar-agregar-page/editar-agregar-page.component';
+import { ViewPageComponent } from './components/ObraComponets/view-page/view-page.component';
+import { ObraPageComponent } from './components/ObraComponets/obra-page/obra-page.component';
+import { MapaPageComponent } from './components/ObraComponets/mapa-page/mapa-page.component';
+import { AgmCoreModule } from '@agm/core';
+import { Key } from 'protractor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ObraPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    HomePageComponent,
+    EditarAgregarPageComponent,
+    ViewPageComponent,
+    HomeObrePageComponent,
+    MapaPageComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +38,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    AgmCoreModule.forRoot(
+      {
+        apiKey:'AIzaSyDaR8IQhLf4YGJTo9kJ3xkEB2ioK_p2Lio'
+      }
+    ),
     AngularFireModule.initializeApp(
       {
         apiKey: "AIzaSyBrNaKvBugvcEIw6ZHWBre-7AREmkr0h24",

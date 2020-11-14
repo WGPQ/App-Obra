@@ -1,0 +1,13 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId" (mapClick)=" placeMarker($event)"  [fitBounds]="listllena">
+    <agm-marker *ngFor="let obra of listObra" [latitude]="obra.lat" [longitude]="obra.lon" [agmFitBounds]=true [iconUrl]="{url: markurl+obra.marcador,scaledSize: { width: 25, height: 25 }}">
+        <agm-info-window >
+            <h5>{{obra.nombre}}</h5>
+            <!--../../assets/markrs/mark_yello.png-->
+            <br>
+            <b>Fecha inicio: </b>{{obra.fecha_ini}}
+            <br>
+            <b>Fecha fin: </b>{{obra.fecha_fin}}
+            
+        </agm-info-window>
+    </agm-marker>
+</agm-map>

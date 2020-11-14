@@ -1,0 +1,52 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg  bg-info navbar-light">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" routerLink="">
+        <img class="profile-user-img img-fluid img-circle"
+            src="https://galileoenrichment.com/wp-content/uploads/2020/03/man.png" alt="User profile picture"
+            style="width:50px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+                    
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a routerLink="/home/obra" class="text-white nav-link">Listar Obras
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/home/agregar" class="text-white nav-link">Crear Obra
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/home/map" class="text-white nav-link">Visualizar Obras
+                </a>
+            </li>
+            
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+              
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{useremail}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" (click)="cerrarSession()" >Cerrar Sesion</a>
+
+                </div>
+              </li> 
+           
+        </ul>
+    </div>
+</nav>
+<!-- /.navbar -->
+<div class="container">
+
+    <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,4 @@
-export interface Obra{
+export class Obra{
     id?:string;
     nombre:string;
     lat:string;

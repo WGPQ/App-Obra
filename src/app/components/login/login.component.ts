@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.service.IniciarSeeion(user).then(() => {
       this.users.reset();
       localStorage.setItem('usuario_actual',user.email);
-      this.router.navigate(['/obra']);
+      this.router.navigate(['/home']);
     }).catch(err => {
       this.toastr.error("Error: " + err.message);
     })
