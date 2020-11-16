@@ -12,10 +12,14 @@ export class MapaPageComponent implements OnInit {
   lat: number;
   lng: number;
   zoom: number;
+  userpositiomarket = { url: 'https://cdn4.iconfinder.com/data/icons/staff-management-vol-2/72/80-512.png', scaledSize: { width: 25, height: 25 } }
+  //userpositiomarket='https://cdn4.iconfinder.com/data/icons/staff-management-vol-2/72/80-512.png';
   mapTypeId: string;
+  lat_actual: number;
+  lng_actual: number;
   latObra = "";
   lonObra = "";
-  listllena:boolean=false;
+  listllena: boolean = false;
   markurl = '../../assets/markrs/';
 
   listObra: Obra[];
@@ -27,11 +31,18 @@ export class MapaPageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.obtenerObra();
-    
+    this.userLocation();
   }
-  listavacia(){
-    if(this.listObra!=null)
-    this.listllena=true;
+  userLocation() {
+    this.service.getPosition().then(position => {
+      this.lat_actual = position.lat;
+      this.lng_actual = position.lng;
+    });
+  }
+
+  listavacia() {
+    if (this.listObra != null)
+      this.listllena = true;
   }
   placeMarker($event) {
     this.lonObra = $event.coords.lng;
