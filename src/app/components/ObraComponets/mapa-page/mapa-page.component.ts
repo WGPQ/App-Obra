@@ -12,9 +12,7 @@ export class MapaPageComponent implements OnInit {
   lat: number;
   lng: number;
   zoom: number;
-  userpositiomarket = { url: 'https://cdn4.iconfinder.com/data/icons/staff-management-vol-2/72/80-512.png', scaledSize: { width: 25, height: 25 } }
-  //userpositiomarket='https://cdn4.iconfinder.com/data/icons/staff-management-vol-2/72/80-512.png';
-  mapTypeId: string;
+ mapTypeId: string;
   lat_actual: number;
   lng_actual: number;
   latObra = "";
