@@ -43,13 +43,14 @@ import { Key } from 'protractor';
     ),
     AngularFireModule.initializeApp(
       {
-        apiKey: "AIzaSyBrNaKvBugvcEIw6ZHWBre-7AREmkr0h24",
-        authDomain: "db-app-obra.firebaseapp.com",
-        databaseURL: "https://db-app-obra.firebaseio.com",
-        projectId: "db-app-obra",
-        storageBucket: "db-app-obra.appspot.com",
-        messagingSenderId: "597832544254",
-        appId: "1:597832544254:web:06186b25a8a7facf549aaf"
+        apiKey: "AIzaSyBLrT1sqI9-r16oBGYLeRPfommXNWSvuW8",
+        authDomain: "db-app-obra-500f9.firebaseapp.com",
+        databaseURL: "https://db-app-obra-500f9.firebaseio.com",
+        projectId: "db-app-obra-500f9",
+        storageBucket: "db-app-obra-500f9.appspot.com",
+        messagingSenderId: "513803386954",
+        appId: "1:513803386954:web:202d0a500a84c516c426b3",
+        measurementId: "G-ZE2L6GPDM8"
       }
     ),
     NgbModule
